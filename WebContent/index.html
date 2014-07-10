@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		
+		
+		<title>Pagina Inicial</title>
+		
+		
+		<!-- <script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=geometry"></script> -->
+
+		
+		<link rel="stylesheet" href="resources/themes/ramais-custom-theme.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		
+		<script type="text/javascript" src="resources/js/funcao-gmaps.js"></script>
+		<script type="text/javascript" src="resources/js/eme_gmaps_api_1.2.js"></script>
+		<script type="text/javascript" src="resources/js/jsColor.js"></script>	
+		
+		<script type="text/javascript">
+		
+
+			function passarParametrosServlet1(){
+				
+				var origem = document.getElementById("origem").value;
+				var destino = document.getElementById("destino").value;				
+				pegaPolylinha(origem, destino);
+				
+			}
+		</script>
+		
+	</head>
+	<body>
+		Origem
+		<input type="text" id="origem" />
+		<br /> 
+		Destino
+		<input type="text" id="destino" />
+		<br />
+		<button id="chamarFuncao" onclick="passarParametrosServlet1()">Localizar</button>
+		<br />		
+		<input type="button" onclick="carregarTabelaDinamica()" value="Criar" />
+		<div style="float: left;">
+			<div id="googleMap" style="width: 1000px; height: 700px; float: left;"></div>
+			<div id="directions" style="width: 500px; float: left;"></div>
+		</div>
+	</body>
+</html>
